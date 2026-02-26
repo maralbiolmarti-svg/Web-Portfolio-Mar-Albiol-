@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: 'cy.grotesk-wide';
+  src: url('/tipografias/cy-grotesk-wide.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'cy.grotesk-wide', sans-serif;
+}
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
