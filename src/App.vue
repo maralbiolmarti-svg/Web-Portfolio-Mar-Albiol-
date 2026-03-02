@@ -8,13 +8,13 @@ const isActive = (path: string): boolean => route.path === path
 </script>
 
 <template>
-  <div class="min-h-screen bg-slate-100 text-slate-900 flex flex-col">
+  <div class="min-h-screen bg-white text-slate-900 flex flex-col">
     <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
       <div class="w-full px-3 py-4 md:px-4 md:py-3 lg:px-6 lg:py-3 flex items-center justify-between gap-4">
         <RouterLink to="/" aria-label="Ir a inicio">
           <img
-            src="/imagenes/logo-tagline.png"
-            class="h-14 w-auto object-contain md:h-16 lg:h-18"
+            src="/imagenes/logo.png"
+            class="h-8 w-auto object-contain md:h-10 lg:h-12"
             alt="Logo de Mar Albiol"
           >
         </RouterLink>
@@ -29,7 +29,7 @@ const isActive = (path: string): boolean => route.path === path
                   'text-[#710310] underline underline-offset-8 decoration-2': isActive('/sobre-mi')
                 }"
               >
-                Sobre mi
+                SOBRE MI
               </RouterLink>
             </li>
             <li>
@@ -40,7 +40,7 @@ const isActive = (path: string): boolean => route.path === path
                   'text-[#710310] underline underline-offset-8 decoration-2': isActive('/proyectos')
                 }"
               >
-                Proyectos
+                PROYECTOS
               </RouterLink>
             </li>
             <li>
@@ -51,7 +51,7 @@ const isActive = (path: string): boolean => route.path === path
                   'text-[#710310] underline underline-offset-8 decoration-2': isActive('/contacto')
                 }"
               >
-                Contacto
+                CONTACTO
               </RouterLink>
             </li>
           </ul>
@@ -98,3 +98,6 @@ const isActive = (path: string): boolean => route.path === path
   </div>
 </template>
 
+<style>
+
+</style>
