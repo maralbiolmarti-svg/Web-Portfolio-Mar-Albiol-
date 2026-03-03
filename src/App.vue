@@ -1,15 +1,35 @@
 <script setup lang="ts">
 import { Mail, Instagram, Music2 } from 'lucide-vue-next'
-import { RouterView, RouterLink, useRoute } from 'vue-router'
+import { RouterView, RouterLink, useRoute, useRouter } from 'vue-router'
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu'
 
 const route = useRoute()
+const router = useRouter()
 
 const isActive = (path: string): boolean => route.path === path
+const isProjectsActive = (): boolean => route.path.startsWith('/proyectos')
+const goToProjects = (): void => {
+  router.push('/proyectos')
+}
+
+const projectLinks = [
+  { label: 'Lo que nos mueve', to: '/proyectos/lo-que-nos-mueve' },
+  { label: 'Cora', to: '/proyectos/cora' },
+  { label: 'Huesca', to: '/proyectos/huesca' },
+  { label: 'Calendario', to: '/proyectos/calendario' },
+]
 </script>
 
 <template>
   <div class="min-h-screen bg-white text-slate-900 flex flex-col">
-    <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+    <header class="relative z-[70] border-b border-slate-200 bg-white/90 backdrop-blur">
       <div class="w-full px-3 py-4 md:px-4 md:py-3 lg:px-6 lg:py-3 flex items-center justify-between gap-4">
         <RouterLink to="/" aria-label="Ir a inicio">
           <img
@@ -19,43 +39,54 @@ const isActive = (path: string): boolean => route.path === path
           >
         </RouterLink>
 
-        <nav aria-label="Indice principal">
-          <ul class="flex items-center gap-8 md:gap-12 text-sm font-medium md:text-base">
-            <li>
+        <NavigationMenu :viewport="false">
+          <NavigationMenuList class="text-sm font-medium md:text-base">
+            <NavigationMenuItem>
               <RouterLink
                 to="/sobre-mi"
-                class="transition-colors hover:text-slate-600"
+                class="inline-flex h-9 items-center transition-colors hover:text-slate-600"
                 :class="{
                   'text-[#710310] underline underline-offset-8 decoration-2': isActive('/sobre-mi')
                 }"
               >
-                SOBRE MI
+                SOBRE MI 
               </RouterLink>
-            </li>
-            <li>
-              <RouterLink
-                to="/proyectos"
-                class="transition-colors hover:text-slate-600"
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger
+                class="h-9 px-0 text-sm font-medium md:text-base hover:bg-transparent focus:bg-transparent"
                 :class="{
-                  'text-[#710310] underline underline-offset-8 decoration-2': isActive('/proyectos')
+                  'text-[#710310] underline underline-offset-8 decoration-2': isProjectsActive()
                 }"
+                @click="goToProjects"
               >
                 PROYECTOS
-              </RouterLink>
-            </li>
-            <li>
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul class="space-y-1">
+                  <li v-for="project in projectLinks" :key="project.to">
+                    <NavigationMenuLink as-child>
+                      <RouterLink :to="project.to">{{ project.label }}</RouterLink>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
               <RouterLink
                 to="/contacto"
-                class="transition-colors hover:text-slate-600"
+                class="inline-flex h-9 items-center transition-colors hover:text-slate-600"
                 :class="{
                   'text-[#710310] underline underline-offset-8 decoration-2': isActive('/contacto')
                 }"
               >
                 CONTACTO
               </RouterLink>
-            </li>
-          </ul>
-        </nav>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
     </header>
 
@@ -97,7 +128,3 @@ const isActive = (path: string): boolean => route.path === path
     </footer>
   </div>
 </template>
-
-<style>
-
-</style>

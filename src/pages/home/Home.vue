@@ -1,4 +1,4 @@
-<script setup lang="ts"></script>
+﻿<script setup lang="ts"></script>
 
 <template>
   <section class="mx-auto w-full max-w-6xl px-6 pt-6 pb-1 md:pt-8 md:pb-2 lg:mx-0 lg:max-w-none lg:pt-10 lg:pb-2">
@@ -26,3 +26,4 @@
   font-style: italic;
 }
 </style>
+

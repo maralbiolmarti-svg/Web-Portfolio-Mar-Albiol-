@@ -1,9 +1,14 @@
-<script setup lang="ts">
-import { introCv } from '@/data/sobreMi'
+﻿<script setup lang="ts">
+const introCv = {
+  sectionLabel: 'Sobre mi',
+  TitleLines: ['Hola, soy Mar.', 'diseñadora creativa', 'con enfoque digital.'],
+  imageSrc: '/imagenes/mar.portada3.jpeg',
+  focusAreas: ['Graphic Design', 'Visual Identity', 'Branding strategy', 'Web Design'],
+}
 </script>
 
 <template>
-  <section class="mx-auto w-full max-w-6xl px-6 py-8 md:py-12 text-slate-900">
+  <section class="cy-font mx-auto w-full max-w-6xl px-6 py-8 md:py-12 text-slate-900">
     <p class="text-xs tracking-[0.2em] uppercase text-slate-500">{{ introCv.sectionLabel }}</p>
 
     <div class="mt-4 grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14">
@@ -40,8 +45,13 @@ import { introCv } from '@/data/sobreMi'
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
+.cy-font {
+  font-family: 'cy.grotesk-wide', sans-serif;
+}
+
 .about-alt-font {
   font-family: 'Libre Baskerville', serif;
   font-style: italic;
 }
 </style>
+
