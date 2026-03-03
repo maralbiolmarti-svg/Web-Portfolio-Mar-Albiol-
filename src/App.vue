@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 import { Mail, Instagram, Music2 } from 'lucide-vue-next'
 import { RouterView, RouterLink, useRoute, useRouter } from 'vue-router'
 import {
@@ -28,7 +28,7 @@ const projectLinks = [
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-slate-900 flex flex-col">
+  <div class="h-dvh bg-white text-slate-900 flex flex-col">
     <header class="relative z-[70] border-b border-slate-200 bg-white/90 backdrop-blur">
       <div class="w-full px-3 py-4 md:px-4 md:py-3 lg:px-6 lg:py-3 flex items-center justify-between gap-4">
         <RouterLink to="/" aria-label="Ir a inicio">
@@ -90,7 +90,7 @@ const projectLinks = [
       </div>
     </header>
 
-    <main class="flex-1">
+    <main class="flex-1 min-h-0 overflow-auto">
       <RouterView />
     </main>
 
