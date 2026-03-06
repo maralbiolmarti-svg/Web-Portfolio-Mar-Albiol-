@@ -1,50 +1,13 @@
 ﻿<script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { Button } from '@/components/ui/button'
-
-const introCv = {
-  sectionLabels: ['Sobre mi', 'Introducción', 'Formación', 'Habilidades'],
-  titleLines: ['Hola, soy Mar.', 'diseñadora creativa', 'con perspectiva.'],
-  imageSrc: '/imagenes/mar.portada3.jpeg',
-  focusAreas: ['Graphic Design', 'Visual Identity', 'Branding strategy', 'Web Design'],
-}
-
-const introParagraphs = [
-  'Soy Mar, diseñadora gráfica formada en la Universidad Politécnica de Valencia. Desde que empecé en el mundo del diseño me ha interesado especialmente cómo las ideas pueden transformarse en imágenes capaces de comunicar de forma clara y atractiva.',
-  'A lo largo de mi formación he trabajado en proyectos muy variados, lo que me ha permitido explorar distintas áreas del diseño y desarrollar una mirada versátil. Me interesa especialmente construir propuestas visuales que tengan coherencia, personalidad y una intención clara detrás.',
-  'Disfruto del proceso creativo desde la investigación inicial hasta los últimos detalles del resultado final. Para mí, el diseño es una herramienta para ordenar ideas, contar historias y crear conexiones entre marcas y personas.',
-  'Si te interesa conocer más sobre mi trabajo o colaborar en algún proyecto, estaré encantada de escucharte.',
-]
-
-const timeline = [
-  {
-    year: '2024 - Actualidad',
-    title: 'Grado en Diseño y Tecnologías Creativas',
-    place: 'Universidad Politécnica de Valencia',
-    detail: 'Formación enfocada en diseño gráfico, narrativa visual, UX/UI y desarrollo digital.',
-  },
-  {
-    year: '2023',
-    title: 'Practicas en estudio de diseño',
-    place: 'Empresa Eruga comunicación',
-    detail: 'Creación de identidades visuales y páginas webs para clientes.',
-  },
-  {
-    year: '2023',
-    title: 'Máster en diseño gráfico',
-    place: 'Idecrea formaciones',
-    detail: 'Formación especializada en diseño gráfico con énfasis en identidad visual y estrategia de marca.',
-  },
-]
-
-const skills = [
-  { name: 'Adobe Illustrator', level: 92},
-  { name: 'Adobe After Effects', level: 90},
-  { name: 'Adobe InDesign', level: 55 },
-  { name: 'Adobe Lightroom', level: 84},
-  { name: 'Adobe Photoshop', level: 46},
-  { name: 'Adobe Premiere', level: 48},
-]
+import {
+  introCv,
+  introManifesto,
+  introParagraphs,
+  skills,
+  timeline,
+} from '@/data/infoSobreMi'
 </script>
 
 <template>
@@ -82,6 +45,9 @@ const skills = [
         <p class="text-xs tracking-[0.2em] uppercase text-slate-500">{{ introCv.sectionLabels[1] }}</p>
 
         <article class="intro-baskerville mt-5 max-w-4xl space-y-4 text-sm leading-relaxed text-slate-700 md:text-base">
+          <p class="cy-font manifesto-line text-slate-800">{{ introManifesto }}</p>
+          <ul class="cy-font flex flex-wrap items-center gap-2.5">
+          </ul>
           <p v-for="paragraph in introParagraphs" :key="paragraph">{{ paragraph }}</p>
         </article>
       </div>
@@ -94,7 +60,7 @@ const skills = [
         <article
           v-for="item in timeline"
           :key="`${item.year}-${item.title}`"
-          class="rounded-xl border border-slate-200 bg-white p-4 md:p-5"
+          class="rounded-xl border border-slate-200 bg-slate-50 p-4 md:p-5"
         >
           <p class="text-xs uppercase tracking-[0.18em] text-[#710310]">{{ item.year }}</p>
           <h3 class="mt-2 text-lg font-semibold">{{ item.title }}</h3>
@@ -149,6 +115,12 @@ const skills = [
 .intro-baskerville {
   font-family: 'Libre Baskerville', serif;
 }
+
+.manifesto-line {
+  font-size: clamp(1.05rem, 1.2vw + 0.9rem, 1.45rem);
+  line-height: 1.35;
+}
+
 .timeline-detail {
   font-family: 'Libre Baskerville', serif;
   font-style: italic;
@@ -158,5 +130,3 @@ const skills = [
   font-style: italic;
 }
 </style>
-
-
