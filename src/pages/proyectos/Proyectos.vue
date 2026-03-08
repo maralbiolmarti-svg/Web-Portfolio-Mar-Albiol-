@@ -17,7 +17,7 @@ const projectCards: ProjectCard[] = [
   },
     {
     title: 'Calendari',
-    image: '/imagenes/pruebaphotoshop.jpg',
+    image: '/imagenes/portadacalendari.jpg',
     to: '/proyectos/calendario',
   },
   {
