@@ -17,17 +17,17 @@ const projectCards: ProjectCard[] = [
   },
     {
     title: 'Calendari',
-    image: '/imagenes/14.jpg',
+    image: '/imagenes/pruebaphotoshop.jpg',
     to: '/proyectos/calendario',
   },
   {
     title: 'Cora',
-    image: '/imagenes/mar.portada3.jpeg',
+    image: '/imagenes/coraportada.jpg',
     to: '/proyectos/cora',
   },
   {
     title: 'Huesca',
-    image: '/imagenes/albumportada.jpeg',
+    image: '/imagenes/portadacalendario2.jpg',
     to: '/proyectos/huesca',
   },
 ]
