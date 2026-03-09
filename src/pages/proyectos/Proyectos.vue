@@ -26,8 +26,8 @@ const projectCards: ProjectCard[] = [
     to: '/proyectos/cora',
   },
   {
-    title: 'Huesca',
-    image: '/imagenes/portadacalendario2.jpg',
+    title: 'Album',
+    image: '/imagenes/portadaalbum.jpg',
     to: '/proyectos/huesca',
   },
 ]
