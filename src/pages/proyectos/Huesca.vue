@@ -45,7 +45,7 @@ const visuals: ProjectVisual[] = [
         <img
           :src="item.image"
           :alt="item.alt"
-          class="h-[42svh] w-ful object-contain p-3 sm:h-[52svh] md:h-[64svh] lg:h-[76svh] xl:h-[86svh] md:p-5"
+          class="h-[42svh] w-full object-contain p-3 sm:h-[52svh] md:h-[64svh] lg:h-[76svh] xl:h-[86svh] md:p-5"
         />
 
         <div class="absolute inset-x-0 bottom-0 p-4 md:p-7">
